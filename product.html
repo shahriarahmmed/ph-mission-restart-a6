@@ -68,10 +68,10 @@
     </header>
 
     <!-- product section  -->
-    <section>
+    <section class="ml-8 mr-8">
         <div>
             <h1 class="text-3xl font-bold text-center mt-8 mb-8">Our Products</h1>
-            <div class="flex justify-center gap-4">
+            <div class="flex flex-wrap justify-center gap-4">
                 <button class="btn btn-outline rounded-full btn-primary">All</button>
                 <button class="btn btn-outline rounded-full btn-primary">Electronics</button>
                 <button class="btn btn-outline rounded-full btn-primary">Jewelry</button>
@@ -80,11 +80,12 @@
             </div>
             <div>
                 <div class="flex justify-center">
-            <div id="products-container" class="grid grid-cols md:grid-cols-4 mt-16 gap-8 justify-center flex-wrap">
-                <!-- product card  -->
-                
-            </div>
-        </div>
+                    <div id="products-container"
+                        class="grid grid-cols md:grid-cols-4 mt-16 gap-8 justify-center flex-wrap">
+                        <!-- product card  -->
+
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -155,6 +156,21 @@
                 </a>
             </nav>
         </footer>
+    </section>
+
+
+    <!-- modal section  -->
+    <section>
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <div id="product-details" class="space-y-5">
+                    
+                    
+                </div>
+            </div>
+        </dialog>
     </section>
 
 

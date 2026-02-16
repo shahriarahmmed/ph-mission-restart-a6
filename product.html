@@ -7,7 +7,7 @@
     <title>Products</title>
 
     <!-- favicon  -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 
     <!-- fontawsone cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -62,7 +62,12 @@
                 </ul>
             </div>
             <div class="navbar-end mr-8">
-                <a><i class="fa-solid fa-cart-shopping"></i></a>
+                <div class="indicator -top-5 -right-8">
+                    <span id="cart-count" class="indicator-item font-semibold">12</span>
+                </div>
+                <a><i class="fa-solid text-2xl fa-cart-shopping"></i>
+
+                </a>
             </div>
         </div>
     </header>
@@ -72,11 +77,15 @@
         <div>
             <h1 class="text-3xl font-bold text-center mt-8 mb-8">Our Products</h1>
             <div class="flex flex-wrap justify-center gap-4">
-                <button class="btn btn-outline rounded-full btn-primary">All</button>
-                <button class="btn btn-outline rounded-full btn-primary">Electronics</button>
-                <button class="btn btn-outline rounded-full btn-primary">Jewelry</button>
-                <button class="btn btn-outline rounded-full btn-primary">Men's Clothing</button>
-                <button class="btn btn-outline rounded-full btn-primary">Women's Clothing</button>
+                <button class="btn btn-outline rounded-full btn-primary" onclick="filterCategory('all')">All</button>
+                <button class="btn btn-outline rounded-full btn-primary"
+                    onclick="filterCategory('electronics')">Electronics</button>
+                <button class="btn btn-outline rounded-full btn-primary"
+                    onclick="filterCategory('jewelery')">Jewelry</button>
+                <button class="btn btn-outline rounded-full btn-primary"
+                    onclick="filterCategory('men\'s clothing')">Men's Clothing</button>
+                <button class="btn btn-outline rounded-full btn-primary"
+                    onclick="filterCategory('women\'s clothing')">Women's Clothing</button>
             </div>
             <div>
                 <div class="flex justify-center">
@@ -166,8 +175,8 @@
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
             <div class="modal-box">
                 <div id="product-details" class="space-y-5">
-                    
-                    
+
+
                 </div>
             </div>
         </dialog>

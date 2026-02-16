@@ -1,8 +1,25 @@
+
+
+
 const loadProducts = () => {
     fetch('https://fakestoreapi.com/products')
         .then(res => res.json())
         .then(json => displayProducts(json));
 }
+
+const filterCategory = async (category) => {
+    if (category === "all") {
+        url = "https://fakestoreapi.com/products";
+    } else {
+        url = `https://fakestoreapi.com/products/category/${category}`;
+    }
+
+    const res = await fetch(url);
+    const data = await res.json();
+    displayProducts(data);
+}
+
+
 
 const displayProducts = (products) => {
     const productsContainer = document.getElementById("products-container");
@@ -28,7 +45,7 @@ const displayProducts = (products) => {
                         <h2 class="card-title">${product.title}</h2>
                         <p class="text-xl font-bold">$${product.price}</p>
                         <div class="card-actions justify-center ">
-                            <button class="btn" onclick="displayProductsDetails(${product.id})" btn-outline px-10">Details</button>
+                            <button class="btn" onclick="loadProductDetails(${product.id})" btn-outline px-10">Details</button>
                             <button class="btn btn-primary px-10">Add</button>
 
                         </div>
@@ -42,25 +59,34 @@ const displayProducts = (products) => {
     });
 }
 
-const loadProductDetails = (id) => {
+const loadProductDetails = async (id) => {
     const url = `https://fakestoreapi.com/products/${id}`;
     // console.log(url);
-    fetch(url)
-        .then(res => res.json())
-        .then(json => displayProductsDetails(json));
+    const  res = await fetch(url);
+    const details = await res.json();
+    displayProductsDetails(details);
+    console.log(details);
+    // fetch(url)
+    //     .then(res => res.json())
+    //     .then(json => {
+    //         console.log(json);
+    //         displayProductsDetails(json);
+    //     }
+    //     );
 }
 
 const displayProductsDetails = (product) => {
-    console.log(product);
+    // console.log("displaying product details:", product);
     const productDetailsContainer = document.getElementById("product-details");
     productDetailsContainer.innerHTML = `
                     <div class="card w-full bg-base-100 shadow-sm">
                         <div class="card-body">
                             
 
-                            <h2 class="card-title">${product.id} title not showing</h2>
-                            <p class="text-xl font-bold">$${product.description}</p>
-                            <p class="text-xl font-bold">$${product.price}</p>
+                            <h2 class="card-title">${product.title}</h2>
+                            <p class="text-xl font-bold">${product.description}</p>
+                            <p class="text-xl font-bold">Price: $${product.price}</p>
+                            <p class="text-xl font-bold">Rating: ${product.rating.rate}</p>
                             
                             <button class="btn btn-primary px-10">Add to cart</button>
                         </div>
@@ -74,5 +100,9 @@ const displayProductsDetails = (product) => {
     `;
     document.getElementById("my_modal_5").showModal();
 }
+
+
+
+
 
 loadProducts();

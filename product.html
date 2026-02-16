@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwiftCart</title>
+    <title>Products</title>
 
     <!-- favicon  -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -30,6 +30,7 @@
 </head>
 
 <body>
+
     <!-- header section  -->
     <header>
         <div class="navbar bg-base-100 shadow-sm">
@@ -44,8 +45,8 @@
                     </div>
                     <ul tabindex="-1"
                         class="menu menu-sm dropdown-content font-bold  bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Home</a></li>
-                        <li><a href="./product.html">Products</a></li>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a>Products</a></li>
                         <li><a>About</a></li>
                         <li><a>Contact</a></li>
                     </ul>
@@ -54,8 +55,8 @@
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1">
-                    <li><a class="font-bold text-gray-500 hover:text-blue-500">Home</a></li>
-                    <li><a href="./product.html" class="font-bold text-gray-500 hover:text-blue-500">Products</a></li>
+                    <li><a href="./index.html" class="font-bold text-gray-500 hover:text-blue-500">Home</a></li>
+                    <li><a class="font-bold text-gray-500 hover:text-blue-500">Products</a></li>
                     <li><a class="font-bold text-gray-500 hover:text-blue-500">About</a></li>
                     <li><a class="font-bold text-gray-500 hover:text-blue-500">Contact</a></li>
                 </ul>
@@ -66,127 +67,16 @@
         </div>
     </header>
 
-    <!-- hero section  -->
+    <!-- product section  -->
     <section>
-        <div class="hero min-h-150 " style="background-image: url(./assets/banner-image.png);">
-            <div class="hero-overlay"></div>
-            <div class="hero-content text-neutral-content text-left ">
-                <div class="max-w-md ">
-                    <h1 class="mb-5 text-5xl font-bold">Best Collection For You</h1>
-                    <p class="mb-5">
-                        Discover the latest trends in fashion, electronics, and more.
-                        Shop with confidence and style at Swiftcard.
-                    </p>
-                    <button class="btn btn-primary">Shop Now</button>
-                </div>
+        <div>
+            <h1 class="text-3xl font-bold text-center mt-8 mb-8">Our Products</h1>
+            <div>
+
             </div>
-        </div>
-    </section>
-
-    <!-- why choose us section -->
-    <section>
-        <div class="mt-8">
-            <h1 class="text-3xl font-bold text-center mb-4">Why Choose Us</h1>
-            <p class="text-center mb-8">We Provide the best shopping experience with top-notch services.</p>
-        </div>
-        <!-- card section  -->
-        <div class="flex mt-16 gap-8 justify-center flex-wrap">
-            <!-- card-1  -->
-            <div class="card bg-base-100 w-96 shadow-sm indicator">
-                <div class="card-body">
-                    <!-- <span class="indicator-item indicator-start text-4xl text-primary">
-                        <i class="fa-regular fa-truck"></i>
-                    </span> -->
-                    <div class="card mb-8">
-                        <div class="relative">
-                            <div
-                                class=" absolute -top-16 -left w-16 bg-indigo-50 h-16 rounded outline-4 outline-neutral-100 shadow-lg flex items-center justify-center">
-                                <i class="fa-regular fa-truck text-4xl text-indigo-700"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <h2 class="card-title ">Fast Delivery</h2>
-                    <p class="text-gray-500 font-semibold">
-                        Get your orders delivered to your doorstep quickly and efficiently
-                    </p>
-                </div>
-            </div>
-
-            <!-- card-2  -->
-            <div class="card bg-base-100 w-96 shadow-sm indicator">
-                <div class="card-body">
-                    <!-- <span class="indicator-item indicator-start text-4xl text-primary">
-                        <i class="fa-regular fa-truck"></i>
-                    </span> -->
-                    <div class="card mb-8">
-                        <div class="relative">
-                            <div
-                                class=" absolute -top-16 -left w-16 bg-indigo-50 h-16 rounded outline-4 outline-neutral-100 shadow-lg flex items-center justify-center">
-                                <i class="fa-regular fa-headphones text-4xl text-indigo-700"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <h2 class="card-title ">24/7 Support</h2>
-                    <p class="text-gray-500 font-semibold">
-                        Our support team is available around the clock to assist you.
-                    </p>
-                </div>
-            </div>
-
-            <!-- card-3  -->
-            <div class="card bg-base-100 w-96 shadow-sm indicator">
-                <div class="card-body">
-                    <!-- <span class="indicator-item indicator-start text-4xl text-primary">
-                        <i class="fa-regular fa-truck"></i>
-                    </span> -->
-                    <div class="card mb-8">
-                        <div class="relative">
-                            <div
-                                class=" absolute -top-16 -left w-16 bg-indigo-50 h-16 rounded outline-4 outline-neutral-100 shadow-lg flex items-center justify-center">
-                                <i class="fa-solid fa-shield text-4xl text-indigo-700"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <h2 class="card-title ">Secure Payment</h2>
-                    <p class="text-gray-500 font-semibold">
-                        Experience safe and secure transactions with our encrypted payment systems.
-                    </p>
-                </div>
-            </div>
-
-            <!-- card-4  -->
-            <div class="card bg-base-100 w-96 shadow-sm indicator">
-                <div class="card-body">
-                    <!-- <span class="indicator-item indicator-start text-4xl text-primary">
-                        <i class="fa-regular fa-truck"></i>
-                    </span> -->
-                    <div class="card mb-8">
-                        <div class="relative">
-                            <div
-                                class=" absolute -top-16 -left w-16 bg-indigo-50 h-16 rounded outline-4 outline-neutral-100 shadow-lg flex items-center justify-center">
-                                <i class="fa-solid fa-arrows-rotate text-4xl text-indigo-700"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <h2 class="card-title ">Easy Returns</h2>
-                    <p class="text-gray-500 font-semibold">
-                        Not satisfied? Retrun your products easily within 30 days.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- trending products section  -->
-    <section>
-        <div class="mt-16">
-            <h1 class="text-3xl font-bold text-center mb-4">Trending Now</h1>
-        </div>
-
-        <!-- product card section  -->
-        <div class="flex justify-center">
-            <div class="grid grid-cols md:grid-cols-3 mt-16 gap-8 justify-center flex-wrap">
+            <div>
+                <div class="flex justify-center">
+            <div class="grid grid-cols md:grid-cols-4 mt-16 gap-8 justify-center flex-wrap">
                 <!-- product card  -->
                 <div class="card w-full bg-base-100 shadow-sm">
                     <figure><img class="mx-auto" width="150" height="150"
@@ -250,9 +140,34 @@
                         <div class="card-actions justify-center ">
                             <button class="btn btn-outline px-10">Details</button>
                             <button class="btn btn-primary px-10">Add</button>
+
                         </div>
                     </div>
                 </div>
+                <div class="card w-full bg-base-100 shadow-sm">
+                    <figure><img class="mx-auto" width="150" height="150"
+                            src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png"
+                            alt="tshirt" /></figure>
+                    <div class="card-body">
+                        <div class="flex gap-8">
+                            <div class="badge badge-primary">Men's Clothing</div>
+                            <div class="rating rating-sm ">
+                                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400"
+                                    aria-label="1 star" checked="checked" />
+                                3.9 (120)
+                            </div>
+                        </div>
+                        <h2 class="card-title">Mens Casual T-shirt</h2>
+                        <p class="text-xl font-bold">$109.95</p>
+                        <div class="card-actions justify-center ">
+                            <button class="btn btn-outline px-10">Details</button>
+                            <button class="btn btn-primary px-10">Add</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
             </div>
         </div>
     </section>
@@ -324,6 +239,7 @@
             </nav>
         </footer>
     </section>
+
 </body>
 
 </html>

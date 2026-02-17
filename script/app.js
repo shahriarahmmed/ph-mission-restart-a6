@@ -28,7 +28,10 @@ document.getElementById("cart-count").addEventListener("click", () => {
     
 });
 
-
+// const removeActive = () => {
+//     const categoryButton = document.querySelectorAll(".category-btn");
+//     categoryButton.forEach((btn) => btn.classList.remove("active"));
+// }
 
 const loadProducts = () => {
     fetch('https://fakestoreapi.com/products')
@@ -41,6 +44,9 @@ const filterCategory = async (category) => {
         url = "https://fakestoreapi.com/products";
     } else {
         url = `https://fakestoreapi.com/products/category/${category}`;
+        // const clickBtn = document.getElementById(`category-btn-${category}`);
+        // clickBtn.classList.add("active");
+        // console.log(clickBtn);
     }
 
     const res = await fetch(url);
@@ -48,7 +54,7 @@ const filterCategory = async (category) => {
     displayProducts(data);
 }
 
-const trendingProducts = async (trending) => {
+const trendingProducts = async () => {
     const url = "https://fakestoreapi.com/products";
     const res = await fetch(url);
     const data = await res.json();

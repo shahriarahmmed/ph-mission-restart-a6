@@ -35,23 +35,8 @@
     <header>
         <div class="navbar bg-base-100 shadow-sm">
             <div class="navbar-start">
-                <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
-                    </div>
-                    <ul tabindex="-1"
-                        class="menu menu-sm dropdown-content font-bold  bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a>Products</a></li>
-                        <li><a>About</a></li>
-                        <li><a>Contact</a></li>
-                    </ul>
-                </div>
                 <a class="font-bold text-indigo-600 text-xl ml-8">SwiftCart</a>
+                
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1">
@@ -62,13 +47,31 @@
                 </ul>
             </div>
             <div class="navbar-end mr-8">
-                <div class="indicator -top-5 -right-8">
-                    <span id="cart-count" class="indicator-item font-semibold">12</span>
+                
+                <div class="indicator -top-4 -right-8">
+                    <span id="cart-count" class="indicator-item font-semibold">0</span>
                 </div>
                 <a><i class="fa-solid text-2xl fa-cart-shopping"></i>
 
                 </a>
             </div>
+
+            <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="-1"
+                        class="menu menu-sm dropdown-content font-bold  bg-base-100 rounded-box z-1 mt-3 mr-4 w-52 p-2 shadow">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a>Products</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Contact</a></li>
+                    </ul>
+                </div>
         </div>
     </header>
 
@@ -77,14 +80,14 @@
         <div>
             <h1 class="text-3xl font-bold text-center mt-8 mb-8">Our Products</h1>
             <div class="flex flex-wrap justify-center gap-4">
-                <button class="btn btn-outline rounded-full btn-primary" onclick="filterCategory('all')">All</button>
-                <button class="btn btn-outline rounded-full btn-primary"
+                <button id="category-btn-${category}" class="btn active btn-outline rounded-full btn-primary category-btn" onclick="filterCategory('all')">All</button>
+                <button id="category-btn-${category}" class="btn active btn-outline rounded-full btn-primary category-btn"
                     onclick="filterCategory('electronics')">Electronics</button>
-                <button class="btn btn-outline rounded-full btn-primary"
+                <button id="category-btn-${category}" class="btn active btn-outline rounded-full btn-primary category-btn"
                     onclick="filterCategory('jewelery')">Jewelry</button>
-                <button class="btn btn-outline rounded-full btn-primary"
+                <button id="category-btn-${category}" class="btn active btn-outline rounded-full btn-primary category-btn"
                     onclick="filterCategory('men\'s clothing')">Men's Clothing</button>
-                <button class="btn btn-outline rounded-full btn-primary"
+                <button id="category-btn-${category}" class="btn active btn-outline rounded-full btn-primary category-btn"
                     onclick="filterCategory('women\'s clothing')">Women's Clothing</button>
             </div>
             <div>
@@ -129,11 +132,11 @@
             <nav>
                 <form>
                     <h6 class="footer-title">Subscribe to our Newsletter</h6>
-                    <fieldset class="w-80">
+                    <fieldset class="w-80 mt-4">
                         <label>The latest news, articles and resources,
                             sent to your inbox weekly.
                         </label>
-                        <div class="join">
+                        <div class="join mt-4">
                             <input type="text" placeholder="Enter your email" class="input input-bordered join-item" />
                             <button class="btn btn-primary join-item">Subscribe</button>
                         </div>
@@ -143,24 +146,24 @@
         </footer>
         <footer
             class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4 bg-base-200 text-base-content border-base-300 border-t px-10 py-4">
-            <aside class="grid-flow-col items-center">
+            <aside class=" order-2 md:order-1 grid-flow-col items-center">
 
                 <p> © 2025 SwiftCart, Inc. All right reserved</p>
             </aside>
-            <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-                <a>
+            <nav class=" order-1 md:order-2 grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+                <a href="#">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
-                <a>
+                <a href="#">
                     <i class="fa-brands fa-twitter"></i>
                 </a>
-                <a>
+                <a href="#">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a>
+                <a href="#">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                <a>
+                <a href="#">
                     <i class="fa-brands fa-mail"></i>
                 </a>
             </nav>

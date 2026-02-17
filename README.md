@@ -13,4 +13,4 @@
 #### async/await ব্যবহার করে asynchronous কোড লেখা যায় কিন্তু সেটা synchronous স্টাইলে দেখা যায়। async হলো একটা ফাংশনকে asynchronous ভাবে কাজ করতে সাহায্য করে এবং এটা একটি promise রিটার্ন করে। await অংশ কোড এক্সিকিউশন থামিয়ে রাখে যতক্ষন না পর্যন্ত promise টি resove হয়। 
 
 ## 5. Explain the concept of Scope in JavaScript (Global, Function, Block).
-####  Scope দ্বারা বুঝানো হয় কোনো variable, function কিংবা object এর কোডের কোন অংশটুকুর একসেস আছে।  Scope সাধারনত তিন ধরনের হয়। Global Scope, Functional or Local Scope and Block Scope. Global Scope কোডের যেকোনো জায়গা থেকে ব্যবহার করা যায়। 
+####  Scope দ্বারা বুঝানো হয় কোনো variable, function কিংবা object এর কোডের কোন অংশটুকুর একসেস আছে।  Scope সাধারনত তিন ধরনের হয়। Global Scope, Functional or Local Scope and Block Scope. Global Scope এ একটি ভ্যারিয়েবল কোডের যেকোনো জায়গা থেকে একসেস করা যায়। Functional or Local Scope এ ভ্যারিয়েবল ফাংশন এর মধ্যে ডিকলার করা হয় যা শুধু ঐ ফাংশনের মধ্যেই একসেস করা যায় এর বাইরে একসেস করা যায় না। Block Scope এ ভ্যারিয়েবল ডিকলার করা হয় let or const দ্বারা। এটা { } এর মধ্যে ডিকলার করা হয় এবং ওই ব্লকের মধ্যেই একসেস করা যায়।

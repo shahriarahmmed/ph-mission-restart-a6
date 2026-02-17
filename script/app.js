@@ -1,3 +1,32 @@
+let cart = [];
+
+const cartCountElement = document.getElementById("cart-count");
+
+const addToCart = (productId) => {
+    const existingProduct = cart.find((item) => item.id === productId);
+
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        cart.push({ id: product.id, name: product.title, price: product.price, quantity: 1 });
+    }
+    updateCartCount();
+    console.log(cart);
+}
+
+const updateCartCount = () => {
+    let totalCount = 0;
+    cart.forEach((item) => {
+        totalCount += item.quantity;
+    })
+    cartCountElement.textContent = totalCount;
+}
+
+document.getElementById("cart-count").addEventListener("click", () => {
+    console.log("Cart contents:", cart); 
+    
+    
+});
 
 
 
@@ -17,6 +46,54 @@ const filterCategory = async (category) => {
     const res = await fetch(url);
     const data = await res.json();
     displayProducts(data);
+}
+
+const trendingProducts = async (trending) => {
+    const url = "https://fakestoreapi.com/products";
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log("total data",data);
+    // const randomProducts = data[Math.floor(Math.random() * data.length)];
+    const randomProducts = data.sort(() => 0.5 - Math.random());
+    console.log("random products", randomProducts);
+    const topProducts = randomProducts.slice(0, 3);
+    console.log("top 3 products:",topProducts);
+    displayTrendingProducts(topProducts);
+}
+
+trendingProducts();
+
+const displayTrendingProducts = (products) => {
+    const trendingContainer = document.getElementById("trending-container");
+    trendingContainer.innerHTML = ""; 
+    products.forEach((product) => {
+        const productCard = document.createElement("div");
+        productCard.innerHTML = `
+            <div class="card w-full bg-base-100 shadow-sm">
+                    <figure><img class="mx-auto" width="150" height="150"
+                            src="${product.image}"
+                            alt="tshirt" /></figure>
+                    <div class="card-body">
+                        <div class="flex gap-8">
+                            <div class="badge badge-primary">${product.category}</div>
+                            <div class="rating rating-sm ">
+                                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400"
+                                    aria-label="1 star" checked="checked" />
+                                ${product.rating.rate} (${product.rating.count})
+                            </div>
+                        </div>
+                        <h2 class="card-title">${product.title}</h2>
+                        <p class="text-xl font-bold">$${product.price}</p>
+                        <div class="card-actions justify-center ">
+                            <button class="btn btn-outline px-10">Details</button>
+                            <button class="btn btn-primary px-10" onclick="addToCart(${product.id})">Add</button>
+
+                        </div>
+                    </div>
+                </div>
+        `;
+        trendingContainer.append(productCard);
+    });
 }
 
 
@@ -46,7 +123,7 @@ const displayProducts = (products) => {
                         <p class="text-xl font-bold">$${product.price}</p>
                         <div class="card-actions justify-center ">
                             <button class="btn" onclick="loadProductDetails(${product.id})" btn-outline px-10">Details</button>
-                            <button class="btn btn-primary px-10">Add</button>
+                            <button class="btn btn-primary px-10" onclick="addToCart(${JSON.stringify(product.id)})">Add</button>
 
                         </div>
                     </div>
